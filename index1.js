@@ -27,3 +27,7 @@ console.log(sumSelectNumber(200,400));
 let result = sumSelectNumber(100,200);
 console.log(result); 
 
+$(document).ready(function(){
+    $(document).行たい処理など
+});
+
