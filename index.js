@@ -1,40 +1,55 @@
-console.log("この文字がコンソール表示されます。");
-let age = 25;
-const name = 'Alice';
+$(document).ready(function() {
+    $(".buttonA").click(function() {
+        let get_text = $(".target_textA").text();
+        alert(get_text);
+    });
 
-console.log(name + 'is' + age + 'years old.');
+    $(".buttonB").click(function() {
+        $(".target_textB").text("文章が変更された!");
+    });
+    
+    $(".buttonC").click(function() {
+        $(".target_textB").text("文章が変わったぞ!");
+    });
+});
 
-age = 26;
+$(document).ready(function() {
+    $("#boxA").mouseover(function() {
+        $("#boxA").css("background-color", "red");
+    });
 
-console.log(name + 'will be' + age + 'next year.')
+    $("#boxB").mouseout(function() {
+        $(this).css("background-color", "blue");
+    });
 
+    $("#boxC").hover(
+        function() {
+            $(this).css("font-size", "30px");
+        },
+        function(){
+            $(this).css("font-size", "14px");
+        }
+    );
 
-age = 30;
-console.log(age);
+    $(".boxD").mouseover(function() {
+        $("#boxA,#boxB").css("background-color", "white");
+    });
+});
 
+$(document).ready(function(){
+    $(".button_a").click(function() {
+        $(".box_a").addClass("add_color_yellow");
+    });
 
+    $(".button_b").click(function() {
+        $(".box_a").removeClass("add_color_yellow");
+    });
 
-let colors = ["赤","緑","青"];
-console.log(colors[0]);
+    $(".button_c").click(function() {
+        $(".box_b").addClass("add_hidden");
+    });
 
-let person = {
-    firstName: "Bob",
-    lastName: "Smith",
-    age: 25
-};
-console.log(person.firstName);
-
-let greet = function(name) {
-    return "こんにちわ、" + name + "さん！";
-};
-console.log(greet("Alice"));
-let itemPrice1 = 20.99;
-let itemPrice2 = 35.50;
-let shoppingCost = 5.00;
-let totalcost = itemPrice1 + itemPrice2 +shoppingCost;
-console.log("Total Cost: $" + totalcost.toFixed(2));
-
-let number1 = 300;
-number1 += 200;
-
-console.log(number1);
+    $(".button_d").click(function() {
+        $(".box_b").removeClass("add_hidden");
+    });
+});

@@ -3,10 +3,36 @@
     <head>
         <meta charset="utf-8">
         <title>Potepan</title>
+        <link rel="stylesheet" herf="style1.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     </head>
     <body>
-        <h1>プログラミング学習を始めよう</h1>
+        <div>
+            <button class="buttonA">このボタン押下で<br>取得したテキストをアラート表示します。</button>
+            <button class="buttonB">このボタン押下で<br>テキストを変更します。</button>
+            <button class="buttonC">このボタン押下で<br>テキストを変更します。</button>
+            <h3 class="target_textA">このテキストを取得します。</h3>
+            <h3 class="target_textB">このテキストは変更前のテキストです。</h3>
+        </div>
 
-        <script src="index1.js"></script>
+        <div id="boxA">ボックス1<br>この要素にマウスを載せると色が赤に変わります</div>
+        <div id="boxB">ボックス2<br>この要素からマウスが離れると色が青に変わります</div>
+        <div id="boxC">この要素にマウスを載せると文字が大きくなりマウスが離れると戻ります</div>
+        <div class="boxD">この要素にマウスを載せるとボックス1と2の色が白に変わります</div>
+
+        <div>
+            <button class="button_a">このボタンを押下で<br>ボックス１が黄色がになります。</button>
+            <button class="button_b">このボタンを押下で<br>ボックス1が白色になる。</button>
+            <button class="button_c">このボタンを押下で<br>ボックス２が消えます。</button>
+            <button class="button_d">このボタンを押下で<br>ボックス２が現れます。</button>
+        </div>
+        
+        <div>
+            <div class="box_a">ボックス１<br>この要素の色が黄色になります。</div>
+            <div class="box_b">ボックス２<br>この要素にdisplay:none:がつきます。</div>
+        </div>
+        
+
+        <script type= "text/javascript" src="index.js" charset="utf-8"></script>
     </body>
 </html>
