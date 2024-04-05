@@ -53,3 +53,20 @@ $(document).ready(function(){
         $(".box_b").removeClass("add_hidden");
     });
 });
+
+function eventA() {
+    alert("onclickイベントが発火しました");
+  }
+  
+  function eventB() {
+    alert("oninputイベントが発火しました");
+  }
+  
+  function eventC() {
+    alert("onmouseoutイベントが発火しました");
+  }
+  
+  function eventD() {
+    alert("onmouseoverイベントが発火しました");
+  }
+  
