@@ -51,3 +51,36 @@ class Calculator {
   
     display.innerHTML += " + ";
   }
+  function subtractNumber() {
+    if (isLastCharOperator() || isLastCharDecimalPoint()) return;
+  
+    display.innerHTML += " - ";
+  }
+  
+  function multiplyNumber() {
+    if (isLastCharOperator() || isLastCharDecimalPoint()) return;
+  
+    display.innerHTML += " * ";
+  }
+  
+  function divideNumber() {
+    if (isLastCharOperator() || isLastCharDecimalPoint()) return;
+  
+    display.innerHTML += " / ";
+  }
+  
+  function addDecimalPoint() {
+    if (isLastCharOperator() || isLastCharDecimalPoint()) return;
+  
+    if (isCurrentNumberDecimal()) return;
+  
+    display.innerHTML += ".";
+  }
+  
+  function clearNumber() {
+    display.innerHTML = "0";
+  }
+  
+  function calcNumber() {
+    let calculation = display.innerHTML;
+  }
