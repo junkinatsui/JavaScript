@@ -84,3 +84,47 @@ class Calculator {
   function calcNumber() {
     let calculation = display.innerHTML;
   }
+  const operandList = calculation.replace(/ /g, "").split(/\+|\-|\*|\//);
+  const decimals = operandList.filter(function(number) {
+    return number.includes(Calculator.DECIMAL_POINT);
+  })
+  if (!!decimals.length) {
+    const decimalPointPositions = decimals.map(function (decimal) {
+        return (decimal.length -1) - decimal.lastIndexOf('.');
+      })
+      let maxDecimalPointPosition = Math.max(...decimalPointPositions);
+      const splitCalculation = display.innerHTML.split(" ");
+
+      for (let i = 0; i < operandList.length; i++) {
+        let index = splitCalculation.indexOf(operandList[i]);
+  
+        splitCalculation[index] = operandList[i] * (10 ** maxDecimalPointPosition);
+      }
+      const multiplyCount = splitCalculation.filter(val => val === Calculator.MULTIPLY_OPERATOR).length;
+    const divisionCount = splitCalculation.filter(val => val === Calculator.DIVISION_OPERATOR).length;
+    maxDecimalPointPosition = maxDecimalPointPosition + multiplyCount - divisionCount;
+
+    display.innerHTML = eval(splitCalculation.join('')) / (10 ** maxDecimalPointPosition);
+  } else {
+    display.innerHTML = eval(calculation);
+  }
+  
+  function isLastCharOperator() {
+    const lastChar = display.innerHTML.replace(/ /g, "").slice(-1);
+    return Calculator.OPERATORS.includes(lastChar);
+  }
+  function isLastCharDecimalPoint() {
+    const lastChar = display.innerHTML.replace(/ /g, "").slice(-1);
+    return lastChar === Calculator.DECIMAL_POINT;
+  }
+  
+
+  function isCurrentNumberDecimal() {
+    const currentNumber = display.innerHTML.replace(/ /g, "").split(/\+|\-|\*|\//).slice(-1)[0];
+    return currentNumber.includes(Calculator.DECIMAL_POINT);
+  }
+  
+  const display = document.getElementById("js-display");
+  
+
+  const calculator = new Calculator();  
